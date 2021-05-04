@@ -1,5 +1,5 @@
 name: 'octocov'
-description: 'Run octocov'
+description: 'GitHub Action for octocov, a tool for collecting code coverage.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
