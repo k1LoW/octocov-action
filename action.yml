@@ -1,0 +1,5 @@
+name: 'octocov'
+description: 'Run octocov'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
