@@ -5,6 +5,7 @@
 ## Usage
 
 ``` yaml
+# .github/workflows/ci.yml
 name: Test
 
 on:
@@ -40,6 +41,8 @@ coverage:
 ```
 
 ``` yaml
+# .github/workflows/ci.yml
+
       -
         name: Run octocov
         uses: k1LoW/octocov@main
@@ -55,6 +58,8 @@ coverage:
 ```
 
 ``` yaml
+# .github/workflows/ci.yml
+
     steps:
       -
         name: Checkout
