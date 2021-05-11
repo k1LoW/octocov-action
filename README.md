@@ -29,7 +29,7 @@ jobs:
         run: go test ./... -coverprofile=coverage.out
       -
         name: Run octocov
-        uses: k1LoW/octocov-action@main
+        uses: k1LoW/octocov-action@v0
 ```
 
 ### Check for acceptable coverage
@@ -45,7 +45,7 @@ coverage:
 
       -
         name: Run octocov
-        uses: k1LoW/octocov-action@main
+        uses: k1LoW/octocov-action@v0
 ```
 
 
@@ -69,7 +69,7 @@ coverage:
 [...]
       -
         name: Run octocov
-        uses: k1LoW/octocov-action@main
+        uses: k1LoW/octocov-action@v0
       -
         name: Commit badge
         uses: EndBug/add-and-commit@v7
