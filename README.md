@@ -17,10 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Checkout
         uses: actions/checkout@v2
       -
-        name: Set up Go
         uses: actions/setup-go@v2
         with:
           go-version: 1.16
@@ -28,7 +26,6 @@ jobs:
         name: Run tests with coverage report output
         run: go test ./... -coverprofile=coverage.out
       -
-        name: Run octocov
         uses: k1LoW/octocov-action@v0
 ```
 
@@ -44,7 +41,6 @@ coverage:
 # .github/workflows/ci.yml
 
       -
-        name: Run octocov
         uses: k1LoW/octocov-action@v0
 ```
 
@@ -62,16 +58,13 @@ coverage:
 
     steps:
       -
-        name: Checkout
         uses: actions/checkout@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 [...]
       -
-        name: Run octocov
         uses: k1LoW/octocov-action@v0
       -
-        name: Commit badge
         uses: EndBug/add-and-commit@v7
         with:
           add: 'docs/coverage.svg'
