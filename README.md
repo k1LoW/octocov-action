@@ -51,6 +51,8 @@ coverage:
 # .octocov.yml
 coverage:
   badge: docs/coverage.svg
+push:
+  enable: true
 ```
 
 ``` yaml
@@ -64,10 +66,4 @@ coverage:
 [...]
       -
         uses: k1LoW/octocov-action@v0
-      -
-        uses: EndBug/add-and-commit@v7
-        with:
-          add: 'docs/coverage.svg'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
