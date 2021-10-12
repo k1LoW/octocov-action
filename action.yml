@@ -1,5 +1,12 @@
 name: 'octocov'
 description: 'GitHub Action for octocov, a tool for collecting code coverage.'
+inputs:
+  github-token:
+    description: 'GITHUB_TOKEN'
+    default: ${{ github.token }}
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    OCTOCOV_GITHUB_TOKEN: ${{ inputs.github-token }}
