@@ -2,7 +2,27 @@
 
 :octocat: GitHub Action for [octocov](https://github.com/k1LoW/octocov)
 
+![comment](docs/comment.png)
+
 ## Usage
+
+Add `.octocov.yml` ( or `octocov.yml` ) file to your repository.
+
+``` yaml
+# .octocov.yml
+coverage:
+  path: coverage.out
+codeToTestRatio:
+  code:
+    - '**/*.go'
+    - '!**/*_test.go'
+  test:
+    - '**/*_test.go'
+comment:
+  enable: true
+```
+
+And set up a workflow file as follows and run octocov on GitHub Actions.
 
 ``` yaml
 # .github/workflows/ci.yml
@@ -29,41 +49,4 @@ jobs:
         uses: k1LoW/octocov-action@v0
 ```
 
-### Check for acceptable coverage
-
-``` yaml
-# .octocov.yml
-coverage:
-  acceptable: 60%
-```
-
-``` yaml
-# .github/workflows/ci.yml
-
-      -
-        uses: k1LoW/octocov-action@v0
-```
-
-
-### Generate coverage report badge and commit
-
-``` yaml
-# .octocov.yml
-coverage:
-  badge: docs/coverage.svg
-push:
-  enable: true
-```
-
-``` yaml
-# .github/workflows/ci.yml
-
-    steps:
-      -
-        uses: actions/checkout@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-[...]
-      -
-        uses: k1LoW/octocov-action@v0
-```
+See [octocov README](https://github.com/k1LoW/octocov) for more details on how to configure it.
