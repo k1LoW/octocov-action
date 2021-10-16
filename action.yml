@@ -1,4 +1,4 @@
-name: 'octocov'
+name: 'Run octocov'
 description: 'GitHub Action for octocov, a tool for collecting code coverage.'
 inputs:
   github-token:
