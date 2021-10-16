@@ -1,5 +1,8 @@
 name: 'Run octocov'
 description: 'GitHub Action for octocov, a tool for collecting code coverage.'
+branding:
+  icon: 'octagon'
+  color: 'gray-dark'
 inputs:
   github-token:
     description: 'GITHUB_TOKEN'
