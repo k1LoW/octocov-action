@@ -49,4 +49,4 @@ jobs:
         uses: k1LoW/octocov-action@v0
 ```
 
-See [octocov README](https://github.com/k1LoW/octocov) for more details on how to configure it.
+See [action.yml](action.yml) and [octocov README](https://github.com/k1LoW/octocov) for more details on how to configure it.
