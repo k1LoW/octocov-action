@@ -5,8 +5,11 @@ branding:
   color: 'gray-dark'
 inputs:
   github-token:
-    description: 'GITHUB_TOKEN'
+    description: The GitHub token
     default: ${{ github.token }}
+    required: false
+  config:
+    description: config path
     required: false
 runs:
   using: 'docker'
