@@ -9,17 +9,28 @@
 Add `.octocov.yml` ( or `octocov.yml` ) file to your repository.
 
 ``` yaml
-# .octocov.yml
+# .octocov.yml Go example
 coverage:
-  path: coverage.out
+  paths:
+    - path/to/coverage.out
 codeToTestRatio:
   code:
     - '**/*.go'
     - '!**/*_test.go'
   test:
     - '**/*_test.go'
+testExecutionTime:
+  if: true
+diff:
+  if: is_pull_request
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
 comment:
-  enable: true
+  if: is_pull_request
+report:
+  if: is_default_branch
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
 ```
 
 And set up a workflow file as follows and run octocov on GitHub Actions.
@@ -29,8 +40,10 @@ And set up a workflow file as follows and run octocov on GitHub Actions.
 name: Test
 
 on:
-  pull_request:
   push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   test:
