@@ -22,7 +22,6 @@ codeToTestRatio:
 testExecutionTime:
   if: true
 diff:
-  if: is_pull_request
   datastores:
     - artifact://${GITHUB_REPOSITORY}
 comment:
