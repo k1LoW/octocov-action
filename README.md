@@ -2,7 +2,7 @@
 
 :octocat: GitHub Action for [octocov](https://github.com/k1LoW/octocov)
 
-![comment](docs/comment.png)
+![comment](docs/comment_with_diff.png)
 
 ## Usage
 
