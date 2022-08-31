@@ -8,6 +8,8 @@
 
 Add `.octocov.yml` ( or `octocov.yml` ) file to your repository.
 
+( `octocov init` is useful for easy generation. )
+
 ``` yaml
 # .octocov.yml Go example
 coverage:
@@ -49,11 +51,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
-          go-version: 1.16
+          go-version-file: go.mod
       -
         name: Run tests with coverage report output
         run: go test ./... -coverprofile=coverage.out
