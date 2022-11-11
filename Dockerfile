@@ -1,4 +1,4 @@
-FROM ghcr.io/k1low/octocov:v0.45.3
+FROM ghcr.io/k1low/octocov:v0.46.0
 
 COPY entrypoint.sh /entrypoint.sh
 
