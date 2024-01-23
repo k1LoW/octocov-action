@@ -8,11 +8,33 @@ inputs:
     description: The GitHub token
     default: ${{ github.token }}
     required: false
+  version:
+    description: Version of octocov
+    default: latest
+    required: false
+  force:
+    description: Enable force setup
+    default: ''
+    required: false
   config:
-    description: config path
+    description: Config path
     required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  env:
-    OCTOCOV_GITHUB_TOKEN: ${{ inputs.github-token }}
+  using: 'composite'
+  steps:
+    -
+      uses: k1LoW/gh-setup@v1
+      with:
+        repo: github.com/k1LoW/octocov
+        github-token: ${{ inputs.github-token }}
+        version: ${{ inputs.version }}
+        bin-match: octocov
+        strict: true
+        force: ${{ inputs.force }}
+    -
+      name: Run octocov
+      run: octocov --config=${{ inputs.config }}
+      shell: bash
+      env:
+        OCTOCOV_GITHUB_TOKEN: ${{ inputs.github-token }}
+
