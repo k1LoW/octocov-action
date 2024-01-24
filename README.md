@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       -
         uses: actions/setup-go@v4
         with:
@@ -60,7 +60,7 @@ jobs:
         name: Run tests with coverage report output
         run: go test ./... -coverprofile=coverage.out
       -
-        uses: k1LoW/octocov-action@v0
+        uses: k1LoW/octocov-action@v1
 ```
 
 See [action.yml](action.yml) and [octocov README](https://github.com/k1LoW/octocov) for more details on how to configure it.
