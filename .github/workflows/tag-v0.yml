@@ -1,0 +1,18 @@
+name: Manage tag for v0
+on:
+  push:
+    tags:
+    - "v0+.[0-9]+.[0-9]+"
+jobs:
+  tag:
+    name: Manage tag
+    runs-on: ubuntu-latest
+    steps:
+    -
+      uses: actions/checkout@v4
+      with:
+        ref: docker-action
+    -
+      uses: haya14busa/action-update-semver@v1
+      with:
+        major_version_tag_only: true
