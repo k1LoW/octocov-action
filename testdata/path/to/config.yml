@@ -4,3 +4,6 @@ codeToTestRatio:
     - '!**/*_test.go'
   test:
     - '**/*_test.go'
+report:
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
