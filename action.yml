@@ -33,8 +33,13 @@ runs:
         force: ${{ inputs.force }}
     -
       name: Run octocov
-      run: octocov --config=${{ inputs.config }}
-      shell: bash
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const inputs = ${{ toJSON(inputs) }};
+          toolpath = await io.which('octocov', true)
+          opt = `--config=${inputs.config}`
+          await exec.exec(`${toolpath} ${opt}`)
       env:
         OCTOCOV_GITHUB_TOKEN: ${{ inputs.github-token }}
 
