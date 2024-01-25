@@ -64,3 +64,7 @@ jobs:
 ```
 
 See [action.yml](action.yml) and [octocov README](https://github.com/k1LoW/octocov) for more details on how to configure it.
+
+## [Docker container action](https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action) version
+
+Use `v0`.
