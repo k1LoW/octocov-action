@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       tagpr-tag: ${{ steps.run-tagpr.outputs.tag }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Check out source code
         uses: actions/checkout@v4
