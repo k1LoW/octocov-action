@@ -1,0 +1,24 @@
+name: tagpr
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tagpr:
+    runs-on: ubuntu-latest
+    outputs:
+      tagpr-tag: ${{ steps.run-tagpr.outputs.tag }}
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - id: run-tagpr
+        name: Run tagpr
+        uses: Songmu/tagpr@v1
+
+      - uses: haya14busa/action-update-semver@v1
+        if: "steps.run-tagpr.outputs.tag != ''"
+        with:
+          major_version_tag_only: true
+          tag: ${{ steps.run-tagpr.outputs.tag }}        
