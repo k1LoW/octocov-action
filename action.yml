@@ -19,6 +19,10 @@ inputs:
   config:
     description: Config path
     required: false
+  workdir:
+    description: Working directory
+    default: ''
+    required: false
 runs:
   using: 'composite'
   steps:
@@ -39,7 +43,9 @@ runs:
           const inputs = ${{ toJSON(inputs) }};
           const toolpath = await io.which('octocov', true)
           const opt = `--config=${inputs.config}`
-          await exec.exec(`${toolpath} ${opt}`)
+          const options = {};
+          options.cwd = inputs.workdir;
+          await exec.exec(`${toolpath} ${opt}`, [], options)
       env:
         OCTOCOV_GITHUB_TOKEN: ${{ inputs.github-token }}
 

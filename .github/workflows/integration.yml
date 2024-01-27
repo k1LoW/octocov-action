@@ -14,3 +14,14 @@ jobs:
       - uses: ./
         with:
           config: testdata/path/to/config.yml
+  test-run-with-workdir:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          config: config.yml
+          workdir: testdata/path/to
