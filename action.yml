@@ -14,7 +14,7 @@ inputs:
     required: false
   check-existence:
     description: Check for the existence of an existing octocov
-    default: false
+    default: 'false'
     required: false
   config:
     description: Config path
