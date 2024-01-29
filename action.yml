@@ -23,6 +23,10 @@ inputs:
     description: Working directory
     default: ''
     required: false
+  install-dir:
+    description: "Install directory"
+    default: ''
+    required: false
 runs:
   using: 'composite'
   steps:
@@ -32,6 +36,7 @@ runs:
         repo: github.com/k1LoW/octocov
         github-token: ${{ inputs.github-token }}
         version: ${{ inputs.version }}
+        bin-dir: ${{ inputs.install-dir }}
         bin-match: octocov
         strict: true
         force: ${{ inputs.check-existence != 'true' }}
@@ -40,8 +45,9 @@ runs:
       uses: actions/github-script@v7
       with:
         script: |
+          const path = require('path');
           const inputs = ${{ toJSON(inputs) }};
-          const toolpath = await io.which('octocov', true)
+          const toolpath = inputs['install-dir'] != '' ? path.join(inputs['install-dir'], 'octocov') : await io.which('octocov', true)
           const opt = `--config=${inputs.config}`
           const options = {};
           options.cwd = inputs.workdir;
