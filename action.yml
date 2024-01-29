@@ -20,10 +20,14 @@ inputs:
     description: Config path
     required: false
   workdir:
+    description: Working directory (Deprecated)
+    default: ''
+    required: false
+  work-dir:
     description: Working directory
     default: ''
     required: false
-  install-dir:
+  bin-dir:
     description: "Install directory"
     default: ''
     required: false
@@ -47,11 +51,13 @@ runs:
         script: |
           const path = require('path');
           const inputs = ${{ toJSON(inputs) }};
-          const toolpath = inputs['install-dir'] != '' ? path.join(inputs['install-dir'], 'octocov') : await io.which('octocov', true)
+          const toolpath = inputs['bin-dir'] != '' ? path.join(inputs['bin-dir'], 'octocov') : await io.which('octocov', true)
           const opt = `--config=${inputs.config}`
           const options = {};
-          options.cwd = inputs.workdir;
+          if (inputs.workdir != '') {
+            core.warning('Using workdir: to set working directory is deprecated. Use work-dir: instead.')
+          }
+          options.cwd = inputs['work-dir'] != '' ? inputs['work-dir'] : inputs.workdir;
           await exec.exec(`${toolpath} ${opt}`, [], options)
       env:
         OCTOCOV_GITHUB_TOKEN: ${{ inputs.github-token }}
-
