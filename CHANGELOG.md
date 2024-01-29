@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.2.0](https://github.com/k1LoW/octocov-action/compare/v1.1.0...v1.2.0) - 2024-01-29
+### Breaking Changes 🛠
+- Force installation by default by @k1LoW in https://github.com/k1LoW/octocov-action/pull/9
+
 ## [v1.1.0](https://github.com/k1LoW/octocov-action/compare/v1.0.1...v1.1.0) - 2024-01-27
 ### New Features 🎉
 - Support working directory (`workdir:`) by @k1LoW in https://github.com/k1LoW/octocov-action/pull/6
