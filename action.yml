@@ -27,7 +27,7 @@ inputs:
     description: Working directory
     default: ''
     required: false
-  bin-dir:
+  install-dir:
     description: "Install directory"
     default: ''
     required: false
@@ -51,7 +51,7 @@ runs:
         script: |
           const path = require('path');
           const inputs = ${{ toJSON(inputs) }};
-          const toolpath = inputs['bin-dir'] != '' ? path.join(inputs['bin-dir'], 'octocov') : await io.which('octocov', true)
+          const toolpath = inputs['install-dir'] != '' ? path.join(inputs['install-dir'], 'octocov') : await io.which('octocov', true)
           const opt = `--config=${inputs.config}`
           const options = {};
           if (inputs.workdir != '') {

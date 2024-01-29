@@ -24,7 +24,7 @@ jobs:
       - uses: ./
         with:
           work-dir: testdata/path/to
-  test-run-with-bin-dir:
+  test-run-with-install-dir:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
@@ -34,4 +34,4 @@ jobs:
       - uses: ./
         with:
           config: testdata/path/to/.octocov.yml
-          bin-dir: testdata/path/to
+          install-dir: testdata/path/to
