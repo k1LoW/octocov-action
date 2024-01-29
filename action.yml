@@ -12,9 +12,9 @@ inputs:
     description: Version of octocov
     default: latest
     required: false
-  force:
-    description: Enable force setup
-    default: ''
+  check-existence:
+    description: Check for the existence of an existing octocov
+    default: false
     required: false
   config:
     description: Config path
@@ -34,7 +34,7 @@ runs:
         version: ${{ inputs.version }}
         bin-match: octocov
         strict: true
-        force: ${{ inputs.force }}
+        force: ${{ inputs.check-existence != 'true' }}
     -
       name: Run octocov
       uses: actions/github-script@v7
