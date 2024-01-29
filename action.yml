@@ -34,7 +34,7 @@ runs:
         version: ${{ inputs.version }}
         bin-match: octocov
         strict: true
-        force: ${{ !inputs.check-existence }}
+        force: ${{ inputs.check-existence != 'true' }}
     -
       name: Run octocov
       uses: actions/github-script@v7
