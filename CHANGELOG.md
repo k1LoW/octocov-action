@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.3.0](https://github.com/k1LoW/octocov-action/compare/v1.2.0...v1.3.0) - 2024-01-30
+### Breaking Changes 🛠
+- Support for setting install directory by @k1LoW in https://github.com/k1LoW/octocov-action/pull/11
+
 ## [v1.2.0](https://github.com/k1LoW/octocov-action/compare/v1.1.0...v1.2.0) - 2024-01-29
 ### Breaking Changes 🛠
 - Force installation by default by @k1LoW in https://github.com/k1LoW/octocov-action/pull/9
