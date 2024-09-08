@@ -32,7 +32,7 @@ inputs:
     default: ''
     required: false
   args:
-    description: Octocov command line arguments
+    description: Command line arguments of octocov
     default: ''
     required: false
 runs:
