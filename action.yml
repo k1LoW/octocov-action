@@ -31,6 +31,10 @@ inputs:
     description: "Install directory"
     default: ''
     required: false
+  args:
+    description: Octocov command line arguments
+    default: ''
+    required: false
 runs:
   using: 'composite'
   steps:
@@ -52,7 +56,7 @@ runs:
           const path = require('path');
           const inputs = ${{ toJSON(inputs) }};
           const toolpath = inputs['install-dir'] != '' ? path.join(inputs['install-dir'], 'octocov') : await io.which('octocov', true)
-          const opt = `--config=${inputs.config}`
+          const opt = `--config=${inputs.config} ${inputs.args}`
           const options = {};
           if (inputs.workdir != '') {
             core.warning('Using workdir: to set working directory is deprecated. Use work-dir: instead.')
