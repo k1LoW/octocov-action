@@ -14,6 +14,8 @@ jobs:
       - uses: ./
         with:
           config: testdata/path/to/.octocov.yml
+        env:
+          ARTIFACT_NAME: "octocov-report-${{ matrix.os }}"
   test-run-with-work-dir:
     strategy:
       matrix:
@@ -24,6 +26,8 @@ jobs:
       - uses: ./
         with:
           work-dir: testdata/path/to
+        env:
+          ARTIFACT_NAME: "octocov-report-with-work-dir-${{ matrix.os }}"
   test-run-with-install-dir:
     strategy:
       matrix:
@@ -35,3 +39,5 @@ jobs:
         with:
           config: testdata/path/to/.octocov.yml
           install-dir: testdata/path/to
+        env:
+          ARTIFACT_NAME: "octocov-report-with-install-dir-${{ matrix.os }}"

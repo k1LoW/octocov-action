@@ -6,4 +6,4 @@ codeToTestRatio:
     - '**/*_test.go'
 report:
   datastores:
-    - artifact://${GITHUB_REPOSITORY}
+    - artifact://${GITHUB_REPOSITORY}/${ARTIFACT_NAME:-octocov-report}
