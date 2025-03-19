@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.5.0](https://github.com/k1LoW/octocov-action/compare/v1.4.0...v1.5.0) - 2025-03-19
+### Other Changes
+- fix: pin dependencies by @k1LoW in https://github.com/k1LoW/octocov-action/pull/16
+
 ## [v1.4.0](https://github.com/k1LoW/octocov-action/compare/v1.3.0...v1.4.0) - 2024-09-08
 ### Other Changes
 - Add inputs.args parameter by @lufia in https://github.com/k1LoW/octocov-action/pull/13
