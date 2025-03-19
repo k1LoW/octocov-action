@@ -12,6 +12,10 @@ inputs:
     description: Version of octocov
     default: latest
     required: false
+  checksum:
+    description: Checksum of octocov
+    default: ''
+    required: false
   check-existence:
     description: Check for the existence of an existing octocov
     default: 'false'
@@ -39,18 +43,19 @@ runs:
   using: 'composite'
   steps:
     -
-      uses: k1LoW/gh-setup@v1
+      uses: k1LoW/gh-setup@e2f12d046abe942ed4e6976980e53e2388238273 # v1.10.0
       with:
         repo: github.com/k1LoW/octocov
         github-token: ${{ inputs.github-token }}
         version: ${{ inputs.version }}
         bin-dir: ${{ inputs.install-dir }}
         bin-match: octocov
+        checksum: ${{ inputs.checksum }}
         strict: true
         force: ${{ inputs.check-existence != 'true' }}
     -
       name: Run octocov
-      uses: actions/github-script@v7
+      uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
       with:
         script: |
           const path = require('path');
