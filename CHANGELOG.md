@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.5.1](https://github.com/k1LoW/octocov-action/compare/v1.5.0...v1.5.1) - 2025-07-30
+### Other Changes
+- Document the required permissions by @exoego in https://github.com/k1LoW/octocov-action/pull/18
+
 ## [v1.5.0](https://github.com/k1LoW/octocov-action/compare/v1.4.0...v1.5.0) - 2025-03-19
 ### Other Changes
 - fix: pin dependencies by @k1LoW in https://github.com/k1LoW/octocov-action/pull/16
