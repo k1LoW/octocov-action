@@ -48,7 +48,14 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
+    permissions:
+      # To comment on PRs
+      pull-requests: write
+      # To retrieve test step time in GitHub Action
+      contents: read
+      # To retrieve previous report for default branch, which is saved as GitHub Action Artifacts
+      actions: read
     steps:
       -
         uses: actions/checkout@v4
