@@ -43,7 +43,7 @@ runs:
   using: 'composite'
   steps:
     -
-      uses: k1LoW/gh-setup@a2e69b734fd97adf7075e37b0f49b5dc5e1f44fc # v1.11.2
+      uses: k1LoW/gh-setup@cfadd455483f37fbb46ca1b3b63532cb62927cb3 # v1.11.3
       with:
         repo: github.com/k1LoW/octocov
         github-token: ${{ inputs.github-token }}
