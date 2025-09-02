@@ -1,0 +1,25 @@
+codeToTestRatio:
+  code:
+    - "src/**/*.ts"
+  test:
+    - "src/**/*.test.ts"
+coverage:
+  paths:
+    # Name of artifacts uploaded by the test-running jobs.
+    # lcov.info (or equivalent) will be stored in the directory named after the below.
+    - "lcov-windows-latest"
+    - "lcov-ubuntu-latest"
+    - "lcov-macos-latest"
+comment:
+  if: is_pull_request
+  hideFooterLink: true
+  deletePrevious: true
+summary:
+  if: true
+report:
+  if: is_default_branch
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
+diff:
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}

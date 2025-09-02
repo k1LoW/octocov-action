@@ -1,0 +1,51 @@
+name: merge coverages from multiple jobs
+# This example illustrates how to merge coverages from multiple GitHub Action jobs.
+# This is useful to test code branches for multiple targets (e.g. OS, runtime version, dependency version, etc).
+#
+# Caveat: Test execution time can not be aggregated, since test job and octocov job run in separate jobs.
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - platform: 'macos-latest'
+          - platform: 'ubuntu-latest'
+          - platform: 'windows-latest'
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: YOUR TEST HERE
+
+      - name: Upload coverage to workspace
+        uses: actions/upload-artifact@v4
+        with:
+          path: lcov.info # adjust this path to your coverage file path
+          name: lcov-${{ matrix.platform }}
+          if-no-files-found: error
+
+  coverage-aggregation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # for octocov to post comments
+      actions: read # for octocov to parse test execution time
+    needs:
+      - test
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v5
+        with:
+          pattern: lcov-*
+
+      - uses: k1LoW/octocov-action@v1
