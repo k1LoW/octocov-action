@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.5.1](https://github.com/k1LoW/octocov-action/compare/v1.5.0...v1.5.1) - 2025-10-26
+### Other Changes
+- Document the required permissions by @exoego in https://github.com/k1LoW/octocov-action/pull/18
+- chore(deps): bump the dependencies group with 4 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/20
+- chore(deps): bump k1LoW/gh-setup from 1.11.2 to 1.11.3 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/21
+- chore(deps): bump the dependencies group with 3 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/23
+- chore(deps): bump the dependencies group with 3 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/24
+
 ## [v1.5.0](https://github.com/k1LoW/octocov-action/compare/v1.4.0...v1.5.0) - 2025-03-19
 ### Other Changes
 - fix: pin dependencies by @k1LoW in https://github.com/k1LoW/octocov-action/pull/16
