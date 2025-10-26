@@ -17,9 +17,9 @@ jobs:
 
       - id: run-tagpr
         name: Run tagpr
-        uses: Songmu/tagpr@163cd45f79765d46a829a18dd20df2df58ead690 # v1.8.0
+        uses: Songmu/tagpr@7191605433b03e11b313dbbc0efb80185170de4b # v1.9.0
 
-      - uses: haya14busa/action-update-semver@3f49a54b677d969c819c1c6ebea626a54dafe032 # v1.5.0
+      - uses: haya14busa/action-update-semver@7d2c558640ea49e798d46539536190aff8c18715 # v1.5.1
         if: "steps.run-tagpr.outputs.tag != ''"
         with:
           major_version_tag_only: true
