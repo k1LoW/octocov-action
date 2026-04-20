@@ -1,5 +1,22 @@
 # Changelog
 
+## [v1.6.0](https://github.com/k1LoW/octocov-action/compare/v1.5.0...v1.6.0) - 2026-04-20
+### Other Changes
+- Document the required permissions by @exoego in https://github.com/k1LoW/octocov-action/pull/18
+- chore(deps): bump the dependencies group with 4 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/20
+- chore(deps): bump k1LoW/gh-setup from 1.11.2 to 1.11.3 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/21
+- chore(deps): bump the dependencies group with 3 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/23
+- chore(deps): bump the dependencies group with 3 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/24
+- chore(deps): bump actions/checkout from 5.0.0 to 6.0.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/25
+- chore(deps): bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/27
+- chore(deps): bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/29
+- chore(deps): bump Songmu/tagpr from 1.11.0 to 1.11.1 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/30
+- chore(deps): bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/31
+- chore(deps): bump Songmu/tagpr from 1.12.1 to 1.15.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/32
+- chore(deps): bump k1LoW/gh-setup from 1.11.6 to 1.11.7 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/33
+- chore(deps): bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/35
+- chore(deps): bump Songmu/tagpr from 1.18.2 to 1.18.3 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/36
+
 ## [v1.5.0](https://github.com/k1LoW/octocov-action/compare/v1.4.0...v1.5.0) - 2025-03-19
 ### Other Changes
 - fix: pin dependencies by @k1LoW in https://github.com/k1LoW/octocov-action/pull/16
