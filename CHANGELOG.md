@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.5.2](https://github.com/k1LoW/octocov-action/compare/v1.5.1...v1.5.2) - 2026-04-26
+### Other Changes
+- chore(deps): bump k1LoW/gh-setup from 1.11.7 to 1.11.8 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/38
+
 ## [v1.5.1](https://github.com/k1LoW/octocov-action/compare/v1.5.0...v1.5.1) - 2026-04-25
 ### Other Changes
 - Document the required permissions by @exoego in https://github.com/k1LoW/octocov-action/pull/18
