@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.5.3](https://github.com/k1LoW/octocov-action/compare/v1.5.2...v1.5.3) - 2026-09-26
+
+### Other Changes
+- chore(deps): bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/k1LoW/octocov-action/pull/43
+
 ## [v1.5.2](https://github.com/k1LoW/octocov-action/compare/v1.5.1...v1.5.2) - 2026-07-27
 
 ### Other Changes
