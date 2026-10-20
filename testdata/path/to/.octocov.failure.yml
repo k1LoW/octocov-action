@@ -1,0 +1,7 @@
+codeToTestRatio:
+  code:
+    - '**/*.go'
+    - '!**/*_test.go'
+  test:
+    - '**/*_test.go'
+  acceptable: 1:1000

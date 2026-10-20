@@ -67,6 +67,10 @@ runs:
             core.warning('Using workdir: to set working directory is deprecated. Use work-dir: instead.')
           }
           options.cwd = inputs['work-dir'] != '' ? inputs['work-dir'] : inputs.workdir;
-          await exec.exec(`${toolpath} ${opt}`, [], options)
+          try {
+            await exec.exec(`${toolpath} ${opt}`, [], options)
+          } catch (e) {
+            core.setFailed(e.message)
+          }
       env:
         OCTOCOV_GITHUB_TOKEN: ${{ inputs.github-token }}

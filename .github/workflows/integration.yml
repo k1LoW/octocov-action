@@ -41,3 +41,19 @@ jobs:
           install-dir: testdata/path/to
         env:
           ARTIFACT_NAME: "octocov-report-with-install-dir-${{ matrix.os }}"
+  test-run-failure:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: ./
+        id: octocov
+        continue-on-error: true
+        with:
+          config: testdata/path/to/.octocov.failure.yml
+      - name: Check that the action failed
+        if: steps.octocov.outcome != 'failure'
+        shell: bash
+        run: exit 1
